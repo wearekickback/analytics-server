@@ -1,6 +1,6 @@
 # KickBack analytics server
 
-[![Build Status](https://travis-ci.org/noblocknoparty/analytics-server.svg?branch=dev)](https://travis-ci.org/noblocknoparty/analytics-server)
+[![Build Status](https://travis-ci.org/noblocknoparty/analytics-server.svg?branch=master)](https://travis-ci.org/noblocknoparty/analytics-server)
 
 * Live URL: https://analytics.kickback.events
 
