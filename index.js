@@ -25,10 +25,10 @@ const init = async () => {
   const router = new KoaRouter()
 
   router.get('/client.js', async ctx => {
-    const origin = `${ctx.protocol}://${ctx.host}`
+    let { origin } = ctx
 
     if (!CODE_CACHE[origin]) {
-      CODE_CACHE[origin] = mixpanelJs.replace(MIXPANEL_API_URL, origin)
+      CODE_CACHE[origin] = mixpanelJs.replace(MIXPANEL_API_URL, origin.substr(origin.indexOf('://') + 1))
     }
 
     ctx.body = CODE_CACHE[origin]
@@ -39,9 +39,8 @@ const init = async () => {
   })
 
   router.get('*', async ctx => {
-    const origin = `${ctx.protocol}://${ctx.host}`
-
-    const newUrl = `${MIXPANEL_API_URL}${ctx.href.substr(origin.length)}`
+    const { origin, href } = ctx
+    const newUrl = `${MIXPANEL_API_URL}${href.substr(origin.length)}`
 
     const headers = {
       ...ctx.headers,

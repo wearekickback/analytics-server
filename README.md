@@ -18,16 +18,15 @@ Then, put the following code before the Mixpanel code you just embedded:
 
 ```html
 <script type="text/javascript">
-  window.MIXPANEL_CUSTOM_LIB_URL = "http://mydomain.com/client.js";
+  window.MIXPANEL_CUSTOM_LIB_URL = "https://mydomain.com/client.js";
 </script>
 ```
 
 That's it! Now you can use all the normal Mixpanel APIs in your page and
 everything will get sent to Mixpanel despite ad blockers.
 
-_Note: Due to the proxy server, the page visitor's IP address does not get
-sent to Mixpanel, which means country and city resolution doesn't work. I am
-still figuring out how to fix this!_
+_Note: The page visitor's IP address does not get sent to Mixpanel, which
+means country and city resolution doesn't work. I am still figuring out how to fix this!_
 
 ## Deployment
 
