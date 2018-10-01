@@ -1,6 +1,6 @@
-# KickBack Mixpanel proxy server
+# KickBack analytics server
 
-[![Build Status](https://travis-ci.org/noblocknoparty/mixpanel-proxy.svg?branch=dev)](https://travis-ci.org/noblocknoparty/mixpanel-proxy)
+[![Build Status](https://travis-ci.org/noblocknoparty/analytics-server.svg?branch=dev)](https://travis-ci.org/noblocknoparty/analytics-server)
 
 * Live URL: https://analytics.kickback.events
 
