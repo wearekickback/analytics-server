@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/noblocknoparty/analytics#readme",
   "dependencies": {
+    "@koa/cors": "^2.2.2",
     "global-tunnel-ng": "^2.6.0",
     "got": "^9.2.2",
     "koa": "^2.5.3",

@@ -1,4 +1,5 @@
 const got = require('got')
+const cors = require('@koa/cors')
 const Koa = require('koa')
 const KoaRouter = require('koa-router')
 const globalTunnel = require('global-tunnel-ng')
@@ -24,8 +25,13 @@ const init = async () => {
   const app = new Koa()
   const router = new KoaRouter()
 
+  app.use(cors({
+    origin: '*',
+    credentials: true,
+  }))
+
   router.get('/client.js', async ctx => {
-    let { origin } = ctx
+    const { origin } = ctx
 
     if (!CODE_CACHE[origin]) {
       CODE_CACHE[origin] = mixpanelJs.replace(MIXPANEL_API_URL, origin.substr(origin.indexOf('://') + 1))
