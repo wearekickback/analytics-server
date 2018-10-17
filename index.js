@@ -26,7 +26,6 @@ const init = async () => {
   const router = new KoaRouter()
 
   app.use(cors({
-    origin: '*',
     credentials: true,
   }))
 
